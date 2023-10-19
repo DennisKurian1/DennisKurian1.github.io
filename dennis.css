@@ -134,8 +134,10 @@ a{color: rgb(49, 17, 92);}
         margin-top:5% ;
     font-size: 1.4vw;}
 
-        #imgme{float:left;
-        margin-top: 0px;}
+        #img1{float:left;
+        margin-top: 0px;
+             max-width: 350px;
+max-height: 345px;}
 .skills{font-size: 15px;
         font-family: Arial, Helvetica, sans-serif;
         color: rgb(145, 143, 138);
