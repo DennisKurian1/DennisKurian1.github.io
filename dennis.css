@@ -1,9 +1,9 @@
 
 
 
-body{background-color: rgb(173, 209, 181);}
+body{background-color: rgb(173, 209, 181);}                 /*Background color*/
 
-h1{
+h1{                                                             /*features for the whole h1 element*/
 
 margin-inline-start: 0px;
 font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +15,7 @@ border-color:rgb(159, 160, 160);
 font-weight:normal;}
 
 
-h2{color:rgb(160, 13, 86);
+h2{color:rgb(160, 13, 86);                                      /*features for the whole h2 element*/
     font-size: 2vw;
     font-style: oblique;
 font-weight:normal ;
@@ -24,7 +24,7 @@ margin-inline-start: 10px;}
 
 h3{color:rgb(255, 0, 255);
 font-size: 1.5vw;
-font-style: oblique;
+font-style: oblique;                                                       /*features for the whole h3 element*/
 font-weight:normal;
 margin-inline-start: 5px;
 
@@ -32,7 +32,7 @@ margin-inline-start: 5px;
 
 p{font-size: 15px;
 margin-block-start: 20px;
-margin-block-end: 30px;
+margin-block-end: 30px;                                                              /*features for the whole p element*/
 }
 
 table,th,td{border:1px solid rgb(20, 129, 6);
@@ -43,22 +43,22 @@ table,th,td{border:1px solid rgb(20, 129, 6);
 
 table{
         border-collapse: collapse;
-        width: 80%;}
+        width: 80%;}                                                                        /*features for the whole table*/
 
 td{height:50px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;                                          /*features for the whole table data  elements with heiiight 50px and font family defined https://www.w3schools.com/css/css_table.asp*/
     
 text-align: center;}
 th{text-align: center;
     font-size: 30px;
     background-color: blue;
     color: azure;
-     font-family:'Times New Roman', Times, serif ;}
+     font-family:'Times New Roman', Times, serif ;}                        /*features for the whole table head  elements with height 30px and font family defined https://www.w3schools.com/css/css_table.asp*/
 
 tr:hover{color: azure;
     background-color: rgb(161, 39, 39);}
 a{color: rgb(49, 17, 92);}
-#tablesec{margin-left: 10%;
+#tablesec{margin-left: 10%;                                                 /*features for the whole table row  elements with hover properties https://www.w3schools.com/css/css_table.asp*/
            display: block;}
 
 
@@ -69,10 +69,10 @@ a{color: rgb(49, 17, 92);}
 
         }/*background for the menu bar placed inside the first 'section element'*/
 
-.menu{display: inline-block;
+.menu{display: inline-block;                                                                   /*this is the class defined for the menubar displaying options as inline block elements, inspired from w2schools*/
     background-color: rgb(178, 182, 182);
     padding-left: 15%;
-    padding-right: 15%;
+    padding-right: 15%;                    
     margin-left: 5%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -86,7 +86,7 @@ a{color: rgb(49, 17, 92);}
 
 
 
-   a{text-decoration: none;}  
+   a{text-decoration: none;}                                                          /*removal  of underline from links*/
 .menu:hover{background-color: rgb(245, 13, 13);
             color: rgb(255, 240, 240);}/*colour change for the elements where id #menu is used */
 
@@ -108,7 +108,7 @@ a{color: rgb(49, 17, 92);}
     font-style: italic;
     font-size: 15px;
     margin-bottom: 25px;
-}
+}                                         /*styles for the  items inside the first section element in index page*/
 
 
 
@@ -126,13 +126,13 @@ a{color: rgb(49, 17, 92);}
             color:rgb(167, 160, 160);
             margin-top: 7%;
             padding-top: 7%;
-        }/*defines the style for the h1 element*/
+        }                           /*defines the style for the h2  element in the left side of index page*/
     
     
     #aboutme{font-style: italic;
             color: rgb(173, 88, 88);
         margin-top:5% ;
-    font-size: 1.4vw;}
+    font-size: 1.4vw;}                 /*style for elements inside the description under about me*/
 
         #img1{float:left;
         margin-top: 0px;
@@ -140,7 +140,7 @@ a{color: rgb(49, 17, 92);}
 max-height: 345px;}
 
 #img2{max-width:375px;
-max-height:500px ;}
+max-height:500px ;}                                              /*max width and height defined for 5 images inthe second page and index page*/
 
 
 #img3{max-width: 525px;
@@ -169,11 +169,11 @@ margin-left:20px;}
 #objectivediv{margin-top: 40px;
          margin-bottom:80px ;}
   #idforh2{color: rgb(255, 255, 255);}
+                                                                                      /*style for various elements inside the index page */
 
+                                        /*specific styles for project */
 
- 
-
-  #projectdiv1{
+  #projectdiv1{                                                        /*projects float using the float elements */
       float:inline-start;
     padding-left: 20px;}
     #projectdiv2{float:right;}
@@ -196,7 +196,7 @@ padding: 20px;}
       /*================================================TRAVEL===============================*/
      
 
-.linkcl{padding-left: 80px;
+.linkcl{padding-left: 80px;                         /*links shown with hover css property  https://www.w3schools.com/css/css_link.asp*/
     background-color: chartreuse;
 padding: 10px;
 color:red;
@@ -207,8 +207,8 @@ display: inline-block;}
 .travelbody{color:rgb(234, 234, 235);
                 display:block;
             padding-top: 5%;}
-
-
+                                                      
+                                                          /*styles for the elements insisde the travel heading*/
 
 
 
