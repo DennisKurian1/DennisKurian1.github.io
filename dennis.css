@@ -1,0 +1,199 @@
+
+
+
+body{background-color: rgb(173, 209, 181);}
+
+h1{
+
+margin-inline-start: 0px;
+font-family: Arial, Helvetica, sans-serif;
+color:rgb(80, 80, 80);
+text-align: center;
+font-size:40px ;
+border-bottom-style:solid ;
+border-color:rgb(159, 160, 160);
+font-weight:100px;}
+
+
+h2{color:rgb(160, 13, 86);
+    font-size: 2vw;
+    font-style: oblique;
+font-weight:normal ;
+margin-left:12px;
+margin-inline-start: 10px;}
+
+h3{color:rgb(255, 0, 255);
+font-size: 1.5vw;
+font-style: oblique;
+font-weight:normal;
+margin-inline-start: 5px;
+
+}
+
+p{font-size: 15px;
+margin-block-start: 20px;
+margin-block-end: 30px;
+}
+
+table,th,td{border:1px solid rgb(20, 129, 6);
+    border-collapse: collapse;
+    border-radius: 2px;
+     ;
+    }
+
+table{
+        border-collapse: collapse;
+        width: 80%;}
+
+td{height:50px;
+    font-family: 'Times New Roman', Times, serif;
+    
+text-align: center;}
+th{text-align: center;
+    font-size: 30px;
+    background-color: blue;
+    color: azure;
+     font-family:'Times New Roman', Times, serif ;}
+
+tr:hover{color: azure;
+    background-color: rgb(161, 39, 39);}
+a{color: rgb(49, 17, 92);}
+#tablesec{margin-left: 10%;
+           display: block;}
+
+
+
+
+.menusec{background-color: dimgrey;
+   
+
+        }/*background for the menu bar placed inside the first 'section element'*/
+
+.menu{display: inline-block;
+    background-color: rgb(178, 182, 182);
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-left: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(197, 197, 28);
+    font-size:20px;
+     
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: solid;}
+    
+    /*style for the menu bar */
+
+
+
+   a{text-decoration: none;}  
+.menu:hover{background-color: rgb(245, 13, 13);
+            color: rgb(255, 240, 240);}/*colour change for the elements where id #menu is used */
+
+
+#majsection{
+    background-color: rgb(188, 223, 178);
+   
+    padding-right: 0%;
+    float: left;
+    
+ }
+/*needs to add padding and other styles for the left elements*/
+
+
+.mar{
+  margin-bottom: 80px;}/*margin for the float element contents*/
+.info{
+    color:rgb(145, 143, 138);
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+
+
+#centerwidth{margin-left: 55%;
+             margin-top: 15%;}/*margin element for the 'about me element'*/
+
+
+
+    
+
+
+         .honleft{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+            color:rgb(167, 160, 160);
+            margin-top: 7%;
+            padding-top: 7%;
+        }/*defines the style for the h1 element*/
+    
+    
+    #aboutme{font-style: italic;
+            color: rgb(173, 88, 88);
+        margin-top:5% ;
+    font-size: 1.4vw;}
+
+        #imgme{float:left;
+        margin-top: 0px;}
+.skills{font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(145, 143, 138);
+    margin-top: 10px;
+margin-left:20px;}
+#objective{font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(145, 143, 138);
+    }
+#objectivediv{margin-top: 40px;
+         margin-bottom:80px ;}
+  #idforh2{color: rgb(255, 255, 255);}
+
+
+ 
+
+  #projectdiv1{
+      float:inline-start;
+    padding-left: 20px;}
+    #projectdiv2{float:right;}
+#projectsec{display: inline;
+            }
+
+   
+
+#projecthead{color: rgb(239, 250, 240);
+  text-shadow:2px 2px red; 
+}
+.projrctsubh{color:rgb(61, 18, 90);
+padding: 20px;}
+.projrctsubp{color:ghostwhite;
+    font-size: 20px;}
+
+
+
+     
+      /*================================================TRAVEL===============================*/
+     
+
+.linkcl{padding-left: 80px;
+    background-color: chartreuse;
+padding: 10px;
+color:red;
+display: inline-block;}
+
+.linkcl:hover{background-color: brown;
+            color: greenyellow;}
+.travelbody{color:rgb(234, 234, 235);
+                display:block;
+            padding-top: 5%;}
+
+
+
+
+
+.poftravel{color:ghostwhite;
+font-size: 20px;}
+#divadj{display: inline;
+     float:right;}
+#divadj1{float: left;
+    display: inline;}
