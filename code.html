@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Code | Dennis Kurian GIS Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header / Sidebar -->
+<div id="header">
+	<div class="top">
+		<div id="logo">
+			<h1 id="title">Dennis Kurian</h1>
+			<p>GIS Application Specialist</p>
+		</div>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html"         id="about-link"><span class="icon solid fa-user">About</span></a></li>
+				<li><a href="capstone.html"       id="capstone-link"><span class="icon solid fa-tree">Capstone</span></a></li>
+				<li><a href="toronto.html"        id="toronto-link"><span class="icon solid fa-map-marked-alt">Toronto</span></a></li>
+				<li><a href="webgis.html"         id="webgis-link"><span class="icon solid fa-globe">Web GIS</span></a></li>
+				<li><a href="environment.html"    id="environment-link"><span class="icon solid fa-leaf">Environment</span></a></li>
+				<li><a href="remotesensing.html"  id="remotesensing-link"><span class="icon solid fa-satellite">Remote Sensing</span></a></li>
+				<li><a href="code.html"           id="code-link"><span class="icon solid fa-code">Code</span></a></li>
+				<li><a href="contact.html"        id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="bottom">
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/in/dennis-kurian" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li><a href="mailto:denniskurian65@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+	<section id="code" class="two">
+		<div class="container">
+			<header>
+				<h2>Code &amp; Automation</h2>
+				<p style="font-size:0.82rem;color:#64748b;font-family:monospace;letter-spacing:0.06em;">Python · ArcPy · SQL · FME · Web Deployment</p>
+			</header>
+			<div class="code-grid">
+
+				<div class="code-card">
+					<div class="code-type">LIVE DATA PIPELINE</div>
+					<div class="code-title">iNaturalist → ArcGIS Online</div>
+					<p class="code-desc">Pulls paginated bird sightings from the iNaturalist API around Lindsay, Ontario and automatically pushes them to a hosted ArcGIS Online feature layer. Built for the Fleming Bird Conservation Centre (FBCC).</p>
+					<pre><code><span class="cc"># Pull bird sightings from iNaturalist API</span>
+params = {
+  <span class="cs">"place_id"</span>: 197006,
+  <span class="cs">"iconic_taxa"</span>: <span class="cs">"Aves"</span>,
+  <span class="cs">"format"</span>: <span class="cs">"geojson"</span>
+}
+<span class="ck">while</span> True:
+  response = requests.get(base_url, params=params)
+  all_results.extend(data[<span class="cs">"results"</span>])
+  <span class="ck">if</span> len(all_results) >= total_results: <span class="ck">break</span>
+
+<span class="cc"># Push to ArcGIS Online feature layer</span>
+feature_layer.manager.truncate()
+feature_layer.edit_features(adds=features)</code></pre>
+				</div>
+
+				<div class="code-card">
+					<div class="code-type">ARCPY AUTOMATION</div>
+					<div class="code-title">Raster Band Analyser — NDVI</div>
+					<p class="code-desc">Automates NDVI calculation from multispectral imagery using ArcPy Spatial Analyst. Outputs classified rasters for vegetation analysis workflows without manual band selection.</p>
+					<pre><code><span class="ck">import</span> arcpy
+<span class="ck">from</span> arcpy.sa <span class="ck">import</span> *
+
+<span class="cc"># Calculate NDVI from multispectral bands</span>
+nir = Float(Raster(<span class="cs">"band_4"</span>))
+red = Float(Raster(<span class="cs">"band_3"</span>))
+ndvi = (nir - red) / (nir + red)
+
+ndvi.save(<span class="cs">"output/ndvi_classified.tif"</span>)
+print(<span class="cs">f"Range: {ndvi.minimum:.3f} to {ndvi.maximum:.3f}"</span>)</code></pre>
+				</div>
+
+				<div class="code-card">
+					<div class="code-type">DEPLOYED WEB APPLICATION</div>
+					<div class="code-title">Tree Planting Planner — City of Peterborough</div>
+					<p class="code-desc">Public-facing web application deployed on GitHub Pages using the ArcGIS JavaScript API. Users visualise potential tree planting sites across Peterborough's 5 wards, toggle between public and private land ownership layers, and explore the analysis legend.</p>
+					<div class="ctag-row">
+						<span class="ctag">ArcGIS JS API</span>
+						<span class="ctag">HTML / CSS</span>
+						<span class="ctag">Layer Toggle</span>
+						<span class="ctag">GitHub Pages</span>
+					</div>
+					<a href="https://denniskurian1.github.io/Webapp/" target="_blank" class="lnk" style="margin-top:0.7rem;">View Live App ↗</a>
+				</div>
+
+				<div class="code-card full">
+					<div class="code-type">FME DESKTOP</div>
+					<div class="code-title">Spatial ETL Workflows</div>
+					<p class="code-desc">FME Desktop workspaces for automated spatial data transformation — format conversion (Shapefile → GeoJSON → FileGDB), CRS reprojection, attribute schema mapping, and data quality validation before loading to enterprise geodatabase. Includes automated topology checking and null value handling.</p>
+					<div class="ctag-row">
+						<span class="ctag">Format Conversion</span><span class="ctag">CRS Reprojection</span><span class="ctag">Schema Mapping</span><span class="ctag">Topology Check</span><span class="ctag">QA / QC</span><span class="ctag">Enterprise GDB</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<!-- Footer -->
+<div id="footer">
+	<ul class="copyright">
+		<li>&copy; 2026 Dennis Kurian</li>
+		<li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+	</ul>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="closeLb()">
+	<button class="lb-x" onclick="closeLb()">×</button>
+	<img id="lb-img" src="" alt="">
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function openLb(src) {
+	document.getElementById('lb-img').src = src;
+	document.getElementById('lb').classList.add('on');
+	document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+	document.getElementById('lb').classList.remove('on');
+	document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+	if (e.key === 'Escape') closeLb();
+});
+(function() {
+	var page = location.pathname.split('/').pop();
+	if (!page) page = 'index.html';
+	var link = document.querySelector('#nav a[href="' + page + '"]');
+	if (link) link.classList.add('active');
+})();
+</script>
+
+</body>
+</html>

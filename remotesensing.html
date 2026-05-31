@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Remote Sensing | Dennis Kurian GIS Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="is-preload">
+
+<!-- Header / Sidebar -->
+<div id="header">
+	<div class="top">
+		<div id="logo">
+			<h1 id="title">Dennis Kurian</h1>
+			<p>GIS Application Specialist</p>
+		</div>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html"         id="about-link"><span class="icon solid fa-user">About</span></a></li>
+				<li><a href="capstone.html"       id="capstone-link"><span class="icon solid fa-tree">Capstone</span></a></li>
+				<li><a href="toronto.html"        id="toronto-link"><span class="icon solid fa-map-marked-alt">Toronto</span></a></li>
+				<li><a href="webgis.html"         id="webgis-link"><span class="icon solid fa-globe">Web GIS</span></a></li>
+				<li><a href="environment.html"    id="environment-link"><span class="icon solid fa-leaf">Environment</span></a></li>
+				<li><a href="remotesensing.html"  id="remotesensing-link"><span class="icon solid fa-satellite">Remote Sensing</span></a></li>
+				<li><a href="code.html"           id="code-link"><span class="icon solid fa-code">Code</span></a></li>
+				<li><a href="contact.html"        id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="bottom">
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/in/dennis-kurian" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li><a href="mailto:denniskurian65@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+	<section id="remotesensing" class="two">
+		<div class="container">
+			<header>
+				<h2>Remote Sensing &amp; Image Analysis</h2>
+				<p style="font-size:0.82rem;color:#64748b;font-family:monospace;letter-spacing:0.06em;">LiDAR · OBIA · Multispectral · Stereo</p>
+			</header>
+			<div class="rs-grid">
+				<div class="rs-card" onclick="openLb('images/stereo_pair_niagara.png')"><div class="rs-img-wrap"><img src="images/stereo_pair_niagara.png" class="rs-img" alt="Stereo Pair"></div><div class="rs-body"><div class="rs-title">3D Stereo Pair — Niagara Escarpment</div><div class="rs-desc">CIR-1997-0035-5282 and CIR-1997-0035-5281 NRG imagery. 2.5km × 2.5km, 40 resolution, leaf-on.</div><span class="rs-tag">Stereo Interpretation</span></div></div>
+				<div class="rs-card" onclick="openLb('images/cir_false_colour_road_overlay.png')"><div class="rs-img-wrap"><img src="images/cir_false_colour_road_overlay.png" class="rs-img" alt="CIR"></div><div class="rs-body"><div class="rs-title">CIR False Colour Composite</div><div class="rs-desc">Orthorectified CIR with 20cm airborne imagery background and MiltonORN road overlay at 1:21,000.</div><span class="rs-tag">Orthorectification</span></div></div>
+				<div class="rs-card" onclick="openLb('images/orthorectification_before_after.png')"><div class="rs-img-wrap"><img src="images/orthorectification_before_after.png" class="rs-img" alt="Orthorectification"></div><div class="rs-body"><div class="rs-title">Orthorectification Before &amp; After</div><div class="rs-desc">Geometric correction removing terrain displacement and tilt errors using ground control points.</div><span class="rs-tag">Geometric Correction</span></div></div>
+				<div class="rs-card" onclick="openLb('images/lidar_dtm_dsm_trio.png')"><div class="rs-img-wrap"><img src="images/lidar_dtm_dsm_trio.png" class="rs-img" alt="LiDAR"></div><div class="rs-body"><div class="rs-title">LiDAR DTM / DSM / Point Cloud</div><div class="rs-desc">Ontario classified point cloud — Douglas, ON. April–May 2013, Leica ALS70-HP sensor.</div><span class="rs-tag">LiDAR Processing</span></div></div>
+				<div class="rs-card" onclick="openLb('images/canopy_height_model.png')"><div class="rs-img-wrap"><img src="images/canopy_height_model.png" class="rs-img" alt="CHM"></div><div class="rs-body"><div class="rs-title">Canopy Height Model — Douglas, Ontario</div><div class="rs-desc">CHM at 1:5,000 scale. LiDAR acquired April–May 2017, Leica ALS70-HP, ArcGIS Pro.</div><span class="rs-tag">CHM · LiDAR</span></div></div>
+				<div class="rs-card" onclick="openLb('images/dem_coloured_relief_purple.png')"><div class="rs-img-wrap"><img src="images/dem_coloured_relief_purple.png" class="rs-img" alt="DEM Purple"></div><div class="rs-body"><div class="rs-title">DEM Coloured Relief — Purple Ramp</div><div class="rs-desc">Hypsometric tinting highlighting terrain morphology and elevation variation across the study area.</div><span class="rs-tag">DEM · Terrain Analysis</span></div></div>
+				<div class="rs-card" onclick="openLb('images/dem_coloured_relief_green.png')"><div class="rs-img-wrap"><img src="images/dem_coloured_relief_green.png" class="rs-img" alt="DEM Green"></div><div class="rs-body"><div class="rs-title">DEM Coloured Relief — Green Ramp</div><div class="rs-desc">Alternative hypsometric rendering demonstrating different terrain visualisation approaches.</div><span class="rs-tag">DEM · Visualisation</span></div></div>
+				<div class="rs-card" onclick="openLb('images/dem_shaded_relief_greyscale.png')"><div class="rs-img-wrap"><img src="images/dem_shaded_relief_greyscale.png" class="rs-img" alt="Shaded Relief"></div><div class="rs-body"><div class="rs-title">DEM Shaded Relief — Greyscale</div><div class="rs-desc">Hillshade emphasising micro-topographic features, ridgelines and drainage patterns.</div><span class="rs-tag">Hillshade · DEM</span></div></div>
+				<div class="rs-card" onclick="openLb('images/oak_ridges_classification.png')"><div class="rs-img-wrap"><img src="images/oak_ridges_classification.png" class="rs-img" alt="Oak Ridges"></div><div class="rs-body"><div class="rs-title">Oak Ridges Moraine — Max Likelihood</div><div class="rs-desc">Landsat OLI — deciduous forest, coniferous, water, sediments, bare agricultural, cropped.</div><span class="rs-tag">MLC · Landsat OLI</span></div></div>
+				<div class="rs-card" onclick="openLb('images/pci_object_analyst_ml.png')"><div class="rs-img-wrap"><img src="images/pci_object_analyst_ml.png" class="rs-img" alt="PCI"></div><div class="rs-body"><div class="rs-title">PCI Object Analyst — ML Classification</div><div class="rs-desc">OBIA using PCI Geomatica. Objects classified by spectral and spatial properties using ML.</div><span class="rs-tag">OBIA · PCI Geomatica</span></div></div>
+				<div class="rs-card" onclick="openLb('images/ecognition_segmentation_scale80.png')"><div class="rs-img-wrap"><img src="images/ecognition_segmentation_scale80.png" class="rs-img" alt="eCognition Seg"></div><div class="rs-body"><div class="rs-title">eCognition Segmentation — Scale 80</div><div class="rs-desc">Multiresolution segmentation at scale parameter 80 prior to object classification in eCognition.</div><span class="rs-tag">eCognition · OBIA</span></div></div>
+				<div class="rs-card" onclick="openLb('images/ecognition_water_wetland_classification.png')"><div class="rs-img-wrap"><img src="images/ecognition_water_wetland_classification.png" class="rs-img" alt="eCognition Water"></div><div class="rs-body"><div class="rs-title">eCognition Water &amp; Wetland</div><div class="rs-desc">Blue = open water, green = wetland/riparian vegetation classified using eCognition Essentials.</div><span class="rs-tag">eCognition · Wetland</span></div></div>
+				<div class="rs-card" onclick="openLb('images/ecognition_ndvi_wetland.png')"><div class="rs-img-wrap"><img src="images/ecognition_ndvi_wetland.png" class="rs-img" alt="NDVI Wetland"></div><div class="rs-body"><div class="rs-title">NDVI Wetland Detection</div><div class="rs-desc">NDVI threshold in eCognition identifying wetland and riparian vegetation zones from above threshold.</div><span class="rs-tag">NDVI · Wetland</span></div></div>
+				<div class="rs-card" onclick="openLb('images/ecognition_ndvi_greyscale.png')"><div class="rs-img-wrap"><img src="images/ecognition_ndvi_greyscale.png" class="rs-img" alt="NDVI Greyscale"></div><div class="rs-body"><div class="rs-title">NDVI Greyscale Surface</div><div class="rs-desc">Vegetation density gradient — dark = low NDVI (bare/urban), light = high vegetation density.</div><span class="rs-tag">NDVI · Vegetation Index</span></div></div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<!-- Footer -->
+<div id="footer">
+	<ul class="copyright">
+		<li>&copy; 2026 Dennis Kurian</li>
+		<li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+	</ul>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="closeLb()">
+	<button class="lb-x" onclick="closeLb()">×</button>
+	<img id="lb-img" src="" alt="">
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function openLb(src) {
+	document.getElementById('lb-img').src = src;
+	document.getElementById('lb').classList.add('on');
+	document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+	document.getElementById('lb').classList.remove('on');
+	document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+	if (e.key === 'Escape') closeLb();
+});
+(function() {
+	var page = location.pathname.split('/').pop();
+	if (!page) page = 'index.html';
+	var link = document.querySelector('#nav a[href="' + page + '"]');
+	if (link) link.classList.add('active');
+})();
+</script>
+
+</body>
+</html>
