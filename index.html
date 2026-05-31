@@ -17,15 +17,19 @@
 		#top .container header h2.alt strong { color: #60a5fa; }
 		#top .container header p { color: #94a3b8; font-size: 1rem; line-height: 1.8; }
 
-		/* Section backgrounds alternating — deep black / dark navy */
-		.two   { background: #0d1829; }
-		.three { background: #090d15; }
-		.four  { background: #0d1829; }
-		.five  { background: #090d15; }
-		.six   { background: #0d1829; }
-		.seven { background: #090d15; }
-		.eight { background: #0d1829; }
-		.nine  { background: #090d15; }
+		/* Section backgrounds alternating — near-black / dark navy blue */
+		.two   { background: #0c1f3a !important; }
+		.three { background: #07090f !important; }
+		.four  { background: #0c1f3a !important; }
+		.five  { background: #07090f !important; }
+		.six   { background: #0c1f3a !important; }
+		.seven { background: #07090f !important; }
+		.eight { background: #0c1f3a !important; }
+		.nine  { background: #07090f !important; }
+
+		/* Fix theme default oversized paragraph text in content sections */
+		#main section .container > p,
+		#main section .container > div > p { font-size: 0.88rem !important; line-height: 1.75; }
 
 		/* Stat cards */
 		.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 1.2rem 0; }
@@ -504,6 +508,43 @@ print(<span class="cs">f"Range: {ndvi.minimum:.3f} to {ndvi.maximum:.3f}"</span>
 						<span class="ctag">GitHub Pages</span>
 					</div>
 					<a href="https://denniskurian1.github.io/Webapp/" target="_blank" class="lnk" style="margin-top:0.7rem;">View Live App ↗</a>
+				</div>
+
+				<div class="code-card full">
+					<div class="code-type">ARCPY · SPATIAL STATISTICS</div>
+					<div class="code-title">Automate Crime Data Processing &amp; Hotspot Analysis Pipeline</div>
+					<p class="code-desc">End-to-end ArcPy pipeline for Ottawa crime data — imports CSV coordinates into a geodatabase feature class, reprojects to UTM Zone 18N, runs Optimized Hot Spot Analysis (Gi* statistic), reads results with a SearchCursor, and exports a ranked CSV report flagging high-confidence hot and cold spots.</p>
+					<pre><code><span class="ck">import</span> arcpy, os, csv
+
+<span class="cc"># 1. Create point feature class from CSV</span>
+sr = arcpy.SpatialReference(4326)
+arcpy.management.CreateFeatureclass(OUTPUT_GDB, <span class="cs">"Ottawa_Crime_Raw"</span>, <span class="cs">"POINT"</span>, spatial_reference=sr)
+<span class="ck">with</span> arcpy.da.InsertCursor(out_fc, [<span class="cs">"SHAPE@XY"</span>, <span class="cs">"Neighbourhood"</span>, <span class="cs">"Crime_Rate"</span>]) <span class="ck">as</span> cur:
+    <span class="ck">for</span> row <span class="ck">in</span> neighbourhoods:
+        cur.insertRow([(float(row[<span class="cs">"Longitude"</span>]), float(row[<span class="cs">"Latitude"</span>])),
+                       row[<span class="cs">"Neighbourhood"</span>], float(row[<span class="cs">"Crime_Rate_per1000"</span>])])
+
+<span class="cc"># 2. Reproject to NAD 1983 UTM Zone 18N</span>
+arcpy.management.Project(in_fc, out_fc, arcpy.SpatialReference(26918))
+
+<span class="cc"># 3. Optimized Hot Spot Analysis (Gi* statistic)</span>
+arcpy.stats.OptimizedHotSpotAnalysis(
+    Input_Features = os.path.join(OUTPUT_GDB, <span class="cs">"Ottawa_Crime_UTM"</span>),
+    Output_Features = os.path.join(OUTPUT_GDB, <span class="cs">"Ottawa_HotSpots"</span>),
+    Analysis_Field  = <span class="cs">"Crime_Rate"</span>
+)
+
+<span class="cc"># 4. Read results and export ranked CSV report</span>
+confidence = {<span class="cs">3</span>:<span class="cs">"99% HOT"</span>, <span class="cs">2</span>:<span class="cs">"95% HOT"</span>, <span class="cs">1</span>:<span class="cs">"90% HOT"</span>,
+              <span class="cs">0</span>:<span class="cs">"Not significant"</span>,
+              <span class="cs">-1</span>:<span class="cs">"90% COLD"</span>, <span class="cs">-2</span>:<span class="cs">"95% COLD"</span>, <span class="cs">-3</span>:<span class="cs">"99% COLD"</span>}
+<span class="ck">with</span> arcpy.da.SearchCursor(hotspot_fc, [<span class="cs">"Neighbourhood"</span>, <span class="cs">"Crime_Rate"</span>, zscore_field, bin_field]) <span class="ck">as</span> cur:
+    results = sorted(cur, key=<span class="ck">lambda</span> x: x[2] or 0, reverse=<span class="ck">True</span>)
+<span class="ck">with</span> open(output_csv, <span class="cs">"w"</span>, newline=<span class="cs">""</span>) <span class="ck">as</span> f:
+    csv.writer(f).writerows([[n, r, round(z,3), confidence.get(b,<span class="cs">""</span>)] <span class="ck">for</span> n,r,z,b <span class="ck">in</span> results])</code></pre>
+					<div class="ctag-row">
+						<span class="ctag">ArcPy</span><span class="ctag">InsertCursor</span><span class="ctag">SearchCursor</span><span class="ctag">Gi* Hotspot</span><span class="ctag">UTM Reprojection</span><span class="ctag">CSV Export</span>
+					</div>
 				</div>
 
 				<div class="code-card full">
